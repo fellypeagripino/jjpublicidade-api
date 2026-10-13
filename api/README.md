@@ -4,8 +4,8 @@
 **Curso:** Análise e Desenvolvimento de Sistemas
 **Instituição:** Centro Universitário UNIFACISA
 **Competência:** Integrar Interfaces Web e Serviços Web
-**Professor:** Jonathan Lima
-**Data de entrega:** 05/09/2026
+**Professor:** Jonathan de Souza Lima
+**Data de entrega:** 13/10/2026
 
 ---
 
