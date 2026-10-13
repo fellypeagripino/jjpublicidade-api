@@ -1,9 +1,9 @@
 package com.jjpublicidade.api.Repositorios;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.jjpublicidade.api.Entidades.Anuncio;
 
-public interface AnuncioRepository extends JpaRepository<Anuncio, Long> {
+public interface AnuncioRepository extends MongoRepository<Anuncio, String> {
 
 }

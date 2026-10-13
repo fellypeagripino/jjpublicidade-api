@@ -2,22 +2,21 @@ package com.jjpublicidade.api.Entidades;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Document(collection = "anuncios")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Anuncio {
 
-    @Id @GeneratedValue
-    private Long id;
+    @Id
+    private String id;
 
     private String texto;
 
@@ -25,7 +24,6 @@ public class Anuncio {
 
     private Double valor;
 
-    @ManyToOne
     private Cliente cliente;
 
 }

@@ -1,9 +1,9 @@
 package com.jjpublicidade.api.Repositorios;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.jjpublicidade.api.Entidades.Cliente;
 
-public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+public interface ClienteRepository extends MongoRepository<Cliente, String> {
 
 }

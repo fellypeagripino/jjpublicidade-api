@@ -32,7 +32,7 @@ public class AnuncioController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Anuncio> retornarAnuncio(@PathVariable Long id) {
+    public ResponseEntity<Anuncio> retornarAnuncio(@PathVariable String id) {
         Optional<Anuncio> anuncioPorId = anuncioService.retornarAnuncio(id);
 
         if (anuncioPorId.isPresent()) {
@@ -49,13 +49,13 @@ public class AnuncioController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Anuncio> atualizarAnuncio(@PathVariable Long id, @RequestBody Anuncio anuncio) {
+    public ResponseEntity<Anuncio> atualizarAnuncio(@PathVariable String id, @RequestBody Anuncio anuncio) {
         Anuncio anuncioAtualizado = anuncioService.atualizarAnuncio(id, anuncio);
         return ResponseEntity.status(200).body(anuncioAtualizado);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletarAnuncio(@PathVariable Long id) {
+    public ResponseEntity<Void> deletarAnuncio(@PathVariable String id) {
         anuncioService.deletarAnuncio(id);
         return ResponseEntity.noContent().build();
     }

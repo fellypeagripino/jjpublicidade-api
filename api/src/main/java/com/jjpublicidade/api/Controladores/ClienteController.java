@@ -32,7 +32,7 @@ public class ClienteController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Cliente> retornarCliente(@PathVariable Long id) {
+    public ResponseEntity<Cliente> retornarCliente(@PathVariable String id) {
         Optional<Cliente> clientePorId = clienteService.retornarCliente(id);
 
         if (clientePorId.isPresent()) {
@@ -49,13 +49,13 @@ public class ClienteController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Cliente> atualizarCliente(@PathVariable Long id, @RequestBody Cliente cliente) {
+    public ResponseEntity<Cliente> atualizarCliente(@PathVariable String id, @RequestBody Cliente cliente) {
         Cliente clienteAtualizado = clienteService.atualizarCliente(id, cliente);
         return ResponseEntity.status(200).body(clienteAtualizado);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletarCliente(@PathVariable Long id) {
+    public ResponseEntity<Void> deletarCliente(@PathVariable String id) {
         clienteService.deletarCliente(id);
         return ResponseEntity.noContent().build();
     }

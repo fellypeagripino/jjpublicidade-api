@@ -24,12 +24,12 @@ public class AnuncioService {
         return anuncioRepository.findAll();
     }
 
-    public Optional<Anuncio> retornarAnuncio(Long id) {
+    public Optional<Anuncio> retornarAnuncio(String id) {
         return anuncioRepository.findById(id);
     }
 
     public Anuncio criarAnuncio(Anuncio anuncio) {
-        Long idCliente = anuncio.getCliente().getId();
+        String idCliente = anuncio.getCliente().getId();
         Cliente cliente = clienteRepository.findById(idCliente)
                 .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
 
@@ -37,7 +37,7 @@ public class AnuncioService {
         return anuncioRepository.save(anuncio);
     }
 
-    public Anuncio atualizarAnuncio(Long id, Anuncio anuncioNovo) {
+    public Anuncio atualizarAnuncio(String id, Anuncio anuncioNovo) {
         Anuncio anuncioAntigo = anuncioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Anúncio não encontrado"));
 
@@ -56,7 +56,7 @@ public class AnuncioService {
         return anuncioRepository.save(anuncioAntigo);
     }
 
-    public void deletarAnuncio(Long id) {
+    public void deletarAnuncio(String id) {
         anuncioRepository.deleteById(id);
     }
 

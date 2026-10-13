@@ -1,20 +1,20 @@
 package com.jjpublicidade.api.Entidades;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Document(collection = "clientes")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cliente {
 
-    @Id @GeneratedValue
-    private Long id;
+    @Id
+    private String id;
 
     private String nome;
 
