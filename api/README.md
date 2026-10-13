@@ -20,21 +20,21 @@ CRUD completo para gerenciamento de clientes e anúncios de uma empresa de carro
 ## Entidades
 
 - **Cliente**: nome, telefone, endereço
-- **Anuncio**: texto, data de veiculação, valor, cliente relacionado (1 Cliente -> N Anuncios)
+- **Anuncio**: texto, data de veiculação, valor, cliente (guardado dentro do próprio anúncio)
 
 ## Tecnologias
 
-- Java 17
+- Java 25
 - Spring Boot
-- Spring Data JPA
-- H2 Database
+- Spring Data MongoDB
+- MongoDB
 - Lombok
 - Maven
 
 ## Estrutura de pastas
 
 - `Entidades` — classes de domínio
-- `Repositorios` — interfaces JpaRepository
+- `Repositorios` — interfaces MongoRepository
 - `Services` — regras de negócio
 - `Controladores` — endpoints REST
 
@@ -62,8 +62,9 @@ CRUD completo para gerenciamento de clientes e anúncios de uma empresa de carro
 
 1. Clonar o repositório
 2. Importar como projeto Maven no Eclipse (ou outra IDE)
-3. Rodar `ApiApplication.java`
-4. API disponível em `http://localhost:8080`
+3. Ter o MongoDB rodando em `localhost:27017` (o banco `jjpublicidade` é criado sozinho)
+4. Rodar `ApiApplication.java`
+5. API disponível em `http://localhost:8080`
 
 ## Testes
 
